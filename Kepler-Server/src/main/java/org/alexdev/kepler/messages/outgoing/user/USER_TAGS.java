@@ -1,11 +1,9 @@
 package org.alexdev.kepler.messages.outgoing.user;
 
-import org.alexdev.kepler.dao.mysql.MessengerDao;
 import org.alexdev.kepler.dao.mysql.PlayerDao;
-import org.alexdev.kepler.game.messenger.MessengerMessage;
 import org.alexdev.kepler.game.player.PlayerDetails;
 import org.alexdev.kepler.game.tag.Tag;
-import org.alexdev.kepler.messages.outgoing.messenger.CAMPAIGN_MSG;
+//import org.alexdev.kepler.messages.outgoing.ig.CAMPAIGN_MSG;
 import org.alexdev.kepler.messages.types.PlayerMessageComposer;
 import org.alexdev.kepler.server.netty.streams.NettyResponse;
 

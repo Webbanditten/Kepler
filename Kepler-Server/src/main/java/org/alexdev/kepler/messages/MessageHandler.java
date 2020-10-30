@@ -21,7 +21,7 @@ import org.alexdev.kepler.messages.incoming.infobus.TRYBUS;
 import org.alexdev.kepler.messages.incoming.infobus.VOTE;
 import org.alexdev.kepler.messages.incoming.inventory.GETSTRIP;
 import org.alexdev.kepler.messages.incoming.jukebox.*;
-import org.alexdev.kepler.messages.incoming.messenger.*;
+import org.alexdev.kepler.messages.incoming.ig.*;
 import org.alexdev.kepler.messages.incoming.moderation.*;
 import org.alexdev.kepler.messages.incoming.navigator.*;
 import org.alexdev.kepler.messages.incoming.purse.GETUSERCREDITLOG;
@@ -376,14 +376,14 @@ public class MessageHandler {
         registerEvent(38, new MESSENGER_DECLINEBUDDY());
         registerEvent(37, new MESSENGER_ACCEPTBUDDY());
         registerEvent(233, new MESSENGER_GETREQUESTS());
-        registerEvent(191, new MESSENGER_GETMESSAGES());
-        registerEvent(36, new MESSENGER_ASSIGNPERSMSG());
+        //registerEvent(191, new MESSENGER_GETMESSAGES());
+        //registerEvent(36, new MESSENGER_ASSIGNPERSMSG());
         registerEvent(40, new MESSENGER_REMOVEBUDDY());
         registerEvent(33, new MESSENGER_SENDMSG());
-        registerEvent(31, new MESSENGER_MARKREAD());
         registerEvent(32, new MESSENGER_MARKREAD());
         registerEvent(262, new FOLLOW_FRIEND());
         registerEvent(15, new FRIENDLIST_UPDATE());
+        registerEvent(34, new INVITE_FRIEND());
     }
 
     /**

@@ -13,7 +13,7 @@ import org.alexdev.kepler.game.room.RoomManager;
 import org.alexdev.kepler.game.room.models.RoomModel;
 import org.alexdev.kepler.log.Log;
 import org.alexdev.kepler.messages.outgoing.games.*;
-import org.alexdev.kepler.messages.outgoing.messenger.ROOMFORWARD;
+import org.alexdev.kepler.messages.outgoing.ig.ROOMFORWARD;
 import org.alexdev.kepler.messages.types.MessageComposer;
 import org.alexdev.kepler.util.config.GameConfiguration;
 import org.alexdev.kepler.util.schedule.FutureRunnable;

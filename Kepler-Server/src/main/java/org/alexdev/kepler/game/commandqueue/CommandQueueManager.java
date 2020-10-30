@@ -3,18 +3,18 @@ package org.alexdev.kepler.game.commandqueue;
 import com.google.gson.Gson;
 import org.alexdev.kepler.dao.mysql.*;
 import org.alexdev.kepler.game.item.Item;
-import org.alexdev.kepler.game.messenger.Messenger;
-import org.alexdev.kepler.game.messenger.MessengerMessage;
+import org.alexdev.kepler.game.ig.Messenger;
+import org.alexdev.kepler.game.ig.MessengerMessage;
 import org.alexdev.kepler.game.player.Player;
 import org.alexdev.kepler.game.player.PlayerManager;
 import org.alexdev.kepler.game.room.Room;
 import org.alexdev.kepler.game.room.RoomManager;
 import org.alexdev.kepler.log.Log;
-import org.alexdev.kepler.messages.incoming.messenger.MESSENGER_GETREQUESTS;
+import org.alexdev.kepler.messages.incoming.ig.MESSENGER_GETREQUESTS;
 import org.alexdev.kepler.messages.incoming.user.GET_INFO;
-import org.alexdev.kepler.messages.outgoing.messenger.CAMPAIGN_MSG;
-import org.alexdev.kepler.messages.outgoing.messenger.MESSENGER_INIT;
-import org.alexdev.kepler.messages.outgoing.messenger.ROOMFORWARD;
+//import org.alexdev.kepler.messages.outgoing.ig.CAMPAIGN_MSG;
+import org.alexdev.kepler.messages.outgoing.ig.MESSENGER_INIT;
+import org.alexdev.kepler.messages.outgoing.ig.ROOMFORWARD;
 import org.alexdev.kepler.messages.outgoing.rooms.user.HOTEL_VIEW;
 import org.alexdev.kepler.messages.outgoing.user.ALERT;
 import org.alexdev.kepler.messages.outgoing.user.currencies.CREDIT_BALANCE;
@@ -94,18 +94,18 @@ public class CommandQueueManager {
         var onlinePlayers = PlayerManager.getInstance().getPlayers();
         if(commandArgs.OnlineOnly) {
             for (Player p : onlinePlayers) {
-                MessengerDao.newCampaignMessage(p.getDetails().getId(), commandArgs.Message, commandArgs.MessageLink, commandArgs.MessageUrl);
+                //IGDao.newCampaignMessage(p.getDetails().getId(), commandArgs.Message, commandArgs.MessageLink, commandArgs.MessageUrl);
             }
         } else {
-            MessengerDao.newCampaignMessage(commandArgs.Message, commandArgs.MessageLink, commandArgs.MessageUrl);
+            //MessengerDao.newCampaignMessage(commandArgs.Message, commandArgs.MessageLink, commandArgs.MessageUrl);
         }
 
         for (Player p : onlinePlayers) {
-            var messages = MessengerDao.getUnreadMessages(p.getDetails().getId());
+            var messages = IGDao.getUnreadMessages(p.getDetails().getId());
             for (MessengerMessage m : messages.values()) {
                 if(m.getFromId() == 0) {
                     System.out.println("Yep message");
-                    p.send(new CAMPAIGN_MSG(m));
+                    //p.send(new CAMPAIGN_MSG(m));
                 }
             }
         }
