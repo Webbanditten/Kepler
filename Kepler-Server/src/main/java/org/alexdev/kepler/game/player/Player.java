@@ -11,7 +11,7 @@ import org.alexdev.kepler.game.entity.EntityType;
 import org.alexdev.kepler.game.fuserights.Fuseright;
 import org.alexdev.kepler.game.fuserights.FuserightsManager;
 import org.alexdev.kepler.game.inventory.Inventory;
-import org.alexdev.kepler.game.messenger.Messenger;
+import org.alexdev.kepler.game.ig.Messenger;
 import org.alexdev.kepler.game.room.entities.RoomPlayer;
 import org.alexdev.kepler.messages.outgoing.club.CLUB_GIFT;
 import org.alexdev.kepler.messages.outgoing.handshake.AVAILABLE_SETS;
